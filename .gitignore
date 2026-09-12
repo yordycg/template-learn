@@ -1,0 +1,21 @@
+# Binarios compilados
+*.o
+*.out
+*.so
+bin/
+/tmp/
+
+# Caches y entornos
+.cache/
+.venv/
+__pycache__/
+*.pyc
+
+# Logs y sesiones locales
+*.log
+.session/
+
+# SO y editor
+.DS_Store
+*.swp
+*.swo
