@@ -1,2 +1,21 @@
-# Herdr / Tmux Sessionizer configuration for learning repo
-layout = "default"
+## Override de layout de Sessionizer para el repositorio de estudio.
+## Layout: editor nvim-personal (izquierda 50%) + terminal de soporte (derecha 50%).
+
+[layout]
+focus = "editor"
+
+[tabs.dev]
+label = "dev"
+
+[[tabs.dev.panes]]
+id = "editor"
+title = "nvim"
+command = "env NVIM_APPNAME=nvim-personal nvim"
+
+[[tabs.dev.panes]]
+id = "terminal"
+from = "editor"
+title = "terminal"
+split = "right"
+ratio = 0.5
+command = "exec \"${SHELL:-sh}\""
