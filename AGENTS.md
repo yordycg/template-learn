@@ -5,7 +5,7 @@ Este documento define las restricciones, directrices y protocolos obligatorios q
 ---
 
 ## 🏛️ Filosofía del Pilar 1: Learn
-Este repositorio es un **cockpit operativo de estudio**. Su propósito es la comprensión profunda y asimilación permanente de conceptos técnicos a través del modelo *Code-First*.
+Este repositorio es un **cockpit operativo de estudio**. Su propósito es la comprensión profunda y asimilación permanente de conceptos técnicos a través del modelo *Code-First* e *Inverted Project-Based Learning*.
 
 ### Reglas Innegociables de Mentoría
 1. **Cero Cucharas (Strict No-Spoonfeeding):**
@@ -23,15 +23,53 @@ Este repositorio es un **cockpit operativo de estudio**. Su propósito es la com
 
 ---
 
-## 📂 Integración con Obsidian Zettelkasten
-- **Bóveda Central:** `/home/yordycg/workspace/personal/obsidian-notes`
-- **Ámbito Estricto:** Búsquedas y lecturas acotadas exclusivamente a la bóveda (vía skill `obsidian-query`).
-- **Persistencia al Cierre:** Al finalizar la sesión, la IA extrae las anotaciones estructuradas del código (`@title`, `@phase`, `@learn`, `@open_questions`, `@connect_with`) y genera la nota atómica permanente en `000 Zettelkasten/` vinculada al MOC correspondiente. La IA **debe responder** a las `@open_questions` y documentar la solución en el Zettel.
+## 📂 Estructura Modular y Guía de Adaptación de Escala
+
+La estructura de este repositorio se adapta según la envergadura del tema, preservando dos **invariantes universales**:
+
+### Invariantes Universales:
+1. **Unidad Atómica de Concepto:** Todo concepto reside en una carpeta `NN-concepto/` que contiene el código de estudio diario (`1-demo.ext`, `2-edge-cases.ext`) y una subcarpeta **`exercises/`** local para las katas y retos complementarios.
+2. **Ancla del Proyecto (`projects/`):** Todo aprendizaje incluye un proyecto práctico en `projects/<nombre-proyecto>/` que se avanza en los milestones del sábado (Inverted PBL).
+
+### Adaptación según Tipo de Aprendizaje:
+- **A. Macro-Path (Lenguajes y Sistemas Profundos — C, Go, Rust):**
+  - Mantener la jerarquía de niveles: `1-basics/`, `2-advanced/`, `3-expert/` (y `4-systems/` si aplica).
+  - Cada nivel contiene sus carpetas conceptuales y cada una su subcarpeta `exercises/`.
+- **B. Micro-Path (Sprints Temáticos Cortos — Kafka, Redis, Docker, SQL):**
+  - Eliminar los niveles no necesarios y estructurar por **módulos temáticos** o semanas (ej. `01-core-architecture/`, `02-clustering-replication/`, etc.).
+  - Dentro de cada módulo vive el código diario y su carpeta `exercises/`.
 
 ---
 
-## 🧠 Skills Compartidas (`~/.agents/skills/`)
-Todos los agentes leen las skills de la fuente única global:
+## 📝 Estándar de Anotaciones en Código (`@annotations`)
+
+Todo archivo de estudio, ejercicio o script experimental debe documentar los conceptos aprendidos usando esta cabecera estructurada:
+
+```c
+/*
+ * @title: Título de la nota Zettelkasten
+ * @phase: Semana X, Día Y
+ * -------------------------------------------------------------------------
+ * @learn:
+ * 1- Concepto clave 1 con explicación concisa en tus palabras.
+ * 2- Mecanismo o syscall con ejemplo de uso.
+ *
+ * @open_questions:
+ * - ¿Duda conceptual o caso de borde surgido durante la sesión?
+ *
+ * @connect_with:
+ * - [[MOC - Tema Principal]]
+ * - [[Nota Relacionada]]
+ */
+```
+
+Al cerrar sesión, la IA extrae estas anotaciones con `obsidian-query`, resuelve las `@open_questions` en una sección `## Dudas Resueltas` y genera la nota permanente en la bóveda de Obsidian.
+
+---
+
+## 🧠 Master `.agents/` Directory & Skills
+- **Fuente Única de Memoria:** `.agents/learnings.md` almacena decisiones, gotchas y contexto persistente cross-cliente (Pi, OpenCode, Antigravity).
+- **Skills Compartidas (`~/.agents/skills/`):**
 
 | Skill | Cuándo usarla |
 | :--- | :--- |
