@@ -20,6 +20,22 @@ Este repositorio es un **cockpit operativo de estudio**. Su propósito es la com
    - Se descartan de inmediato las preguntas previas. Prohibido acumular o repetir preguntas anteriores.
 4. **Grafos Conceptuales Nativos en Terminal:**
    - En el chat en vivo, los diagramas de dependencias conceptuales se dibujan en **cajas ASCII/Unicode nativas** (visibles directamente en la terminal). El bloque formal `mermaid` se reserva exclusivamente para la nota final de Obsidian.
+5. **Ergonomía de Ejecución (`Justfile`):**
+   - Para ejecutar o probar código, la IA y el usuario prefieren siempre los comandos ergonómicos:
+     - `just run <archivo>`: compila y corre con sanitizers / race detector según extensión.
+     - `just test <archivo>`: ejecuta y verifica el código de retorno ($?).
+     - `just check <archivo>`: comprobación de sintaxis estática rápida.
+
+---
+
+## 🎯 Contrato Diario de la Kata del Día
+Al solicitar "¿qué toca hoy?", el agente DEBE responder siguiendo estrictamente estos puntos:
+1. **Árbol de contexto + Milestone Bridge:** Cadena jerárquica conceptual + **Impacto en el Proyecto del Sábado** (por qué este concepto de hoy es vital para el feature de fin de semana en `projects/`).
+2. **La Kata del Día (Reto Principal):** Objetivo preciso en 1 oración + ruta exacta del archivo a crear/editar + comando `just run <archivo>`.
+3. **Especificación Técnica (Aceptación):** Syscalls/APIs obligatorias + comportamiento esperado + comando de prueba en 1 línea (`just test <archivo>`).
+4. **Recurso Just-in-Time (JIT):** Nombre + enlace preciso (se abre SOLO si el intento inicial falla).
+5. **Plantilla de Comentarios `@annotations`:** Cabecera estructurada lista para pegar.
+6. *(Opcional)* **Stretch Goal:** Caso de borde ubicado en la subcarpeta `exercises/` del concepto actual.
 
 ---
 
@@ -68,7 +84,7 @@ Al cerrar sesión, la IA extrae estas anotaciones con `obsidian-query`, resuelve
 ---
 
 ## 🧠 Master `.agents/` Directory & Skills
-- **Fuente Única de Memoria:** `.agents/learnings.md` almacena decisiones, gotchas y contexto persistente cross-cliente (Pi, OpenCode, Antigravity).
+- **Memoria Dinámica y Perfil Cognitivo:** `.agents/learnings.md` registra invariantes y los **puntos ciegos / gotchas recurrentes del alumno** que la IA añade al cierre de cada sesión para calibrar futuras katas.
 - **Skills Compartidas (`~/.agents/skills/`):**
 
 | Skill | Cuándo usarla |

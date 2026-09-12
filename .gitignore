@@ -3,6 +3,7 @@
 *.out
 *.so
 bin/
+build/
 /tmp/
 
 # Caches y entornos

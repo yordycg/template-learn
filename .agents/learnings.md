@@ -1,10 +1,26 @@
-# Repository Learnings & Memory
+# Dynamic Learnings & Cognitive Profile — Learning Cockpit
 
-Este archivo registra las lecciones aprendidas, patrones asimilados y particularidades del entorno para este repositorio de estudio.
+Este archivo es la fuente de verdad para la memoria persistente cross-cliente (Pi, OpenCode, Antigravity) en este repositorio.
+Permite a la IA calibrar su mentoría según los puntos ciegos reales del estudiante y recordar invariantes arquitectónicas.
 
-## Reglas de Actualización
-- **Inicio de Sesión:** Leer este archivo para respetar modelos mentales fijados en sesiones pasadas.
-- **Cierre de Sesión:** Cuando se ancle un concepto no intuitivo o se resuelva una duda de arquitectura, añadir 1-2 bullets de resumen.
+---
 
-## Lecciones Asimiladas
-- (Inicializado bajo el estándar Pilar 1: Learn).
+## Invariantes y Convenciones del Repositorio
+- **Standard de Anotaciones:** Todo código incluye bloque `/* @title ... */` parseable por `obsidian-query`.
+- **Inverted PBL:** Los conceptos de lunes a viernes alimentan el hito semanal del sábado en `projects/`.
+- **Single-Focus Invariant:** 1 sola pregunta o quiz por turno; cero sobrecarga cognitiva.
+- **Code is the Answer:** La producción de código o ejecución de comandos anula de inmediato preguntas teóricas previas.
+
+---
+
+## Perfil Cognitivo y Registro de Puntos Ciegos (IA append-only)
+> Registra patrones de error recurrentes, gotchas conceptuales superados y áreas que requieren mayor refuerzo socrático. Las entradas se agregan al cerrar la sesión.
+
+- *(Sin registros previos — repositorio recién inicializado)*.
+
+---
+
+## Registro de Decisiones de Arquitectura y Gotchas Resueltos
+> Documenta decisiones técnicas, gotchas de compilación o librerías descubiertos durante la práctica.
+
+- *(Sin registros previos)*.

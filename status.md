@@ -2,12 +2,19 @@
 
 > **Estado operativo SOLO.** Conceptos → Obsidian · Historia → [`session-log.md`](session-log.md). Iniciar cada sesión con: `status.md` + `git log -1`.
 
+## Configuración del Stack Activo
+- **Lenguaje Principal:** C (o Go / Python / Rust según el roadmap del repo).
+- **Herramienta de Ejecución:** `just run <archivo>` (compila con ASan/UBSan en C, `-race` en Go, etc.).
+- **Comprobación Rápida:** `just test <archivo>`.
+
+---
+
 ## Cómo operar este archivo
 - "¿Qué toca hoy?" → Se responde con la fila de hoy de *Current Week* + el **Contrato de la Kata Diaria** de abajo.
 - Al cierre de sesión: `[ ]` → `[x]` en la fila del día + entrada al `session-log.md` + resumen en Historial.
 - Al cerrar la semana (Dom): archivar las filas en `session-log.md`, abrir la siguiente semana y dejar resumen de 2 líneas.
 - **Code-First:** Cada día empieza con el reto en código. El recurso just-in-time se consulta SOLO si el código falla o falta la firma.
-- **Inverted PBL:** De lunes a viernes se domina la teoría requerida; el sábado se avanza el proyecto en `projects/<nombre-proyecto>/`.
+- **Inverted PBL:** De lunes a viernes se dominan conceptos diarios para desbloquear el hito del sábado en `projects/<nombre-proyecto>/`.
 - **Estructura Atómica de Ejercicios:** Los ejercicios de refuerzo y stretch goals viven **dentro** de la subcarpeta `exercises/` del concepto correspondiente (ej. `1-basics/01-starter-concept/exercises/`), NUNCA sueltos en la raíz.
 
 ---
@@ -15,9 +22,11 @@
 ## Contrato diario de respuesta (obligatorio para la IA)
 
 Al pedir "¿qué toca hoy?", responder siempre con **La Kata del Día (Reto Único Ejecutable)**:
-1. **Árbol de contexto:** Cadena jerárquica (ej. `Área → Nivel → Módulo → Concepto`).
-2. **La Kata del Día (Reto Principal):** Objetivo preciso en 1 oración + archivo a crear/editar con ruta exacta (ej. `1-basics/01-starter-concept/1-concept-demo.c`) + comando de compilación estricto (`gcc -Wall -Wextra -Werror -pedantic -g -fsanitize=address,undefined` o comando del runtime).
-3. **Especificación Técnica (Contrato de Aceptación):** Syscalls/APIs clave requeridas + flujo de ejecución esperado + salida esperada en terminal y código de retorno (`echo $?`) + comando de prueba en 1 línea.
+1. **Árbol de contexto + Milestone Bridge:**
+   - Cadena jerárquica (ej. `Área → Nivel → Módulo → Concepto`).
+   - **Impacto en el Proyecto del Sábado:** 1 oración precisa explicando por qué dominar este concepto hoy es indispensable para la versión o feature del fin de semana en `projects/`.
+2. **La Kata del Día (Reto Principal):** Objetivo preciso en 1 oración + archivo a crear/editar con ruta exacta (ej. `1-basics/01-starter-concept/1-concept-demo.c`) + comando de compilación o `just run <archivo>`.
+3. **Especificación Técnica (Contrato de Aceptación):** Syscalls/APIs clave requeridas + flujo de ejecución esperado + salida esperada en terminal y código de retorno (`echo $?`) + comando de prueba en 1 línea (`just test <archivo>`).
 4. **Recurso Just-in-Time (JIT):** Nombre + link, se abre **SOLO** si el código falla o falta la firma.
 5. **Plantilla de comentarios estructurada:** Cabecera con `@title`, `@phase`, `@learn`, `@open_questions` (dudas que la IA resuelve) y `@connect_with` (enlaces MOC).
 6. *(Opcional)* **Stretch Goal / Ejercicios:** Rutas de ejercicios en la subcarpeta `exercises/` del concepto (ej. `1-basics/01-starter-concept/exercises/01-drill.c`).
